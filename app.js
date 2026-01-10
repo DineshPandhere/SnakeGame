@@ -104,7 +104,24 @@ function render() {
 
 function restartGame() {
     clearInterval(intervalId);
-
+    clearInterval(timeIntervalId);
+    time = `00-00`
+    timeElement.innerText = time;
+    
+     intervalId = setInterval(() => { render() }, 300)
+    timeIntervalId = setInterval(() => {
+        let [min, sec] = time.split("-").map(Number)
+        if (sec == 59) {
+            min += 1
+            sec = 0
+        } else {
+            sec += 1
+        }   
+        time = `${min}-${sec}`
+        timeElement.innerText = time
+    }, 1000)
+    
+    
     // Clear all visual classes from the board
     Object.values(blocks).forEach(block => {
         block.classList.remove('fill', 'food');
@@ -112,13 +129,14 @@ function restartGame() {
         score = 0 
     scoreElement.innerText = score;
 
+
     // Reset State
     snake = [{ x: 1, y: 3 }];
     direction = 'right';
     food = { x: Math.floor(Math.random() * rows), y: Math.floor(Math.random() * cols) };
     
 
-    time = `00:00`
+    
     
     modal.style.display = 'none';
     intervalId = setInterval(render, 300);
