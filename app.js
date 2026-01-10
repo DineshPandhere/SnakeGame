@@ -139,7 +139,7 @@ function restartGame() {
     
     
     modal.style.display = 'none';
-    intervalId = setInterval(render, 300);
+    
 }restartButton.addEventListener('click', restartGame)
 
 
