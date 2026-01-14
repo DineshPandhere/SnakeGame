@@ -31,3 +31,6 @@ The game ends when the snake hits the wall.
 ---
 
 ## 📂 Project Structure
+├── index.html # Game layout, UI, modals, and controls
+├── style.css # Game styling and responsive design
+└── app.js # Game logic, snake movement, scoring, and timer
