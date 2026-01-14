@@ -1,4 +1,5 @@
 # 🐍 Snake Game
+<a href="https://snakegamedsp.netlify.app/">Click Here</a>
 
 A classic Snake Game built using **HTML, CSS, and JavaScript**.  
 This is my **first web development project**, created to practice core JavaScript concepts and game logic.
